@@ -10,7 +10,6 @@ for url in urls:
     html =requests.get(url)
     soup = BeautifulSoup(html.text)
     addresss =soup.select('td > a[class="address-tag"]')
-#contractnames =soup.select('tr > td:nth-of-type(2)')
     contractnames =soup.select('tbody > tr')
 
 
