@@ -2,7 +2,6 @@ import requests  ##导入requests
 from bs4 import BeautifulSoup  ##导入bs4中的BeautifulSoup
 import os
 
-
 urls = ['https://etherscan.io/contractsVerified/{}'.format(i) for i in range(1,728,1)]
 data=[]
 for url in urls:
@@ -11,7 +10,6 @@ for url in urls:
     soup = BeautifulSoup(html.text)
     addresss =soup.select('td > a[class="address-tag"]')
     contractnames =soup.select('tbody > tr')
-
 
     for contractname in contractnames:
         data2 = contractname.get_text("|")
